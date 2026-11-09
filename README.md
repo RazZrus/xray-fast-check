@@ -23,7 +23,7 @@
 Подключиться к серверу и выполнить:
 
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/ВАШ_РЕПО/xray-deploy/main/deploy.sh)
+bash <(curl -sL https://raw.githubusercontent.com/xray-fast-check/xray-deploy/main/deploy.sh)
 ```
 
 Или скопировать скрипт вручную:
@@ -39,7 +39,7 @@ bash deploy.sh
 ## Удаление
 
 ```bash
-bash <(curl -sL https://raw.githubusercontent.com/ВАШ_РЕПО/xray-deploy/main/uninstall.sh)
+bash <(curl -sL https://raw.githubusercontent.com/xray-fast-check/xray-deploy/main/uninstall.sh)
 ```
 
 Или если уже на сервере:
