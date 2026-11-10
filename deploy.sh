@@ -33,7 +33,8 @@ log "Short ID:   $SHORT_ID"
 
 # --- Install Xray ---
 log "Installing Xray..."
-bash -c "$(curl -sL https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install 2>&1 | tail -3
+curl -sL https://github.com/XTLS/Xray-install/raw/main/install-release.sh -o /tmp/install-xray.sh
+bash /tmp/install-xray.sh install 2>&1 | tail -3
 export PATH=$PATH:/usr/local/bin
 
 # --- Generate REALITY keys ---
