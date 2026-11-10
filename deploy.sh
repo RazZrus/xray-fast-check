@@ -64,6 +64,9 @@ openssl req -x509 -nodes -newkey ec -pkeyopt ec_paramgen_curve:P-256 \
 CERT_SHA256=$(openssl x509 -in /etc/hysteria/server.crt -noout -fingerprint -sha256 \
   | cut -d= -f2 | tr -d ':' | tr '[:upper:]' '[:lower:]')
 
+# Fix permissions — hysteria service runs as user 'hysteria'
+chown hysteria:hysteria /etc/hysteria/server.key /etc/hysteria/server.crt 2>/dev/null || true
+
 # --- Xray config ---
 mkdir -p /usr/local/etc/xray /var/log/xray
 
