@@ -33,6 +33,9 @@ log "Short ID:   $SHORT_ID"
 
 # --- Dependencies ---
 log "Installing dependencies..."
+systemctl stop unattended-upgrades 2>/dev/null || true
+kill $(lsof /var/lib/dpkg/lock-frontend 2>/dev/null | awk 'NR>1{print $2}') 2>/dev/null || true
+rm -f /var/lib/dpkg/lock-frontend /var/lib/dpkg/lock /var/cache/apt/archives/lock
 DEBIAN_FRONTEND=noninteractive apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq unzip curl openssl
 
 # --- Install Xray ---
