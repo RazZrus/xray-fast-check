@@ -31,6 +31,10 @@ log "Server IP:  $SERVER_IP"
 log "UUID:       $UUID"
 log "Short ID:   $SHORT_ID"
 
+# --- Dependencies ---
+log "Installing dependencies..."
+apt-get update -qq && apt-get install -y -qq unzip curl openssl
+
 # --- Install Xray ---
 log "Installing Xray..."
 curl -sL https://github.com/XTLS/Xray-install/raw/main/install-release.sh -o /tmp/install-xray.sh
