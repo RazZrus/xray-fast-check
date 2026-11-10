@@ -33,7 +33,7 @@ log "Short ID:   $SHORT_ID"
 
 # --- Dependencies ---
 log "Installing dependencies..."
-apt-get update -qq && apt-get install -y -qq unzip curl openssl
+DEBIAN_FRONTEND=noninteractive apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq unzip curl openssl
 
 # --- Install Xray ---
 log "Installing Xray..."
