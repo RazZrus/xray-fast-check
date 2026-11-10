@@ -1,6 +1,6 @@
 #!/bin/bash
 # Quick deploy script for testing on trial VPS
-# Usage: bash deploy-test.sh
+# Usage: bash <(curl -sL https://raw.githubusercontent.com/razzrus/xray-fast-check/main/deploy.sh)
 # Installs Xray (XHTTP + gRPC + REALITY) and Hysteria2, outputs connection links
 
 set -e
