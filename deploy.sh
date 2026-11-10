@@ -33,10 +33,11 @@ log "Short ID:   $SHORT_ID"
 
 # --- Install Xray ---
 log "Installing Xray..."
-bash -c "$(curl -sL https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u root 2>&1 | tail -3
+bash -c "$(curl -sL https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install 2>&1 | tail -3
+export PATH=$PATH:/usr/local/bin
 
 # --- Generate REALITY keys ---
-KEYS=$(xray x25519)
+KEYS=$(/usr/local/bin/xray x25519)
 PRIVATE_KEY=$(echo "$KEYS" | grep "Private key" | awk '{print $3}')
 PUBLIC_KEY=$(echo "$KEYS" | grep "Public key" | awk '{print $3}')
 log "REALITY keys generated"
